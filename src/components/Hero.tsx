@@ -3,6 +3,10 @@ import { Download, Play, ArrowRight } from "lucide-react";
 import heroImage from "@/assets/pos-hero-image.jpg";
 
 const Hero = () => {
+  const handleDownload = () => {
+    const downloadUrl = "https://github.com/AbdulRehmanZia/POS-Portal/releases/download/POS/POS.System.Setup.0.0.0.exe";
+   window.location.href = downloadUrl;
+  };
   return (
     <section className="min-h-screen bg-gradient-hero flex items-center justify-center py-20">
       <div className="container mx-auto px-4">
@@ -22,6 +26,7 @@ const Hero = () => {
                 variant="download" 
                 size="lg"
                 className="text-lg px-8 py-6"
+                onClick={handleDownload}
               >
                 <Download className="w-5 h-5" />
                 Download POS
