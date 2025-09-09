@@ -11,7 +11,7 @@ const systemRequirements = [
 
 const DownloadSection = () => {
   const handleDownload = () => {
-    const downloadUrl = "https://github.com/AbdulRehmanZia/pos-streamline-hub/releases/download/v1.0.0/POS.System.Setup.0.0.0.exe";
+    const downloadUrl = "https://github.com/AbdulRehmanZia/POS-Portal/releases/download/POS/POS.System.Setup.0.0.0.exe";
    window.location.href = downloadUrl;
   };
 
