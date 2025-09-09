@@ -34,7 +34,7 @@ const App = () => {
               path="/" 
               element={
                 userIsAuthenticated ? (
-                  <Navigate to="/admin" replace />
+                  <Navigate to="/admin/dashboard" replace />
                 ) : (
                   <Index />
                 )
@@ -46,7 +46,7 @@ const App = () => {
               path="/login" 
               element={
                 userIsAuthenticated ? (
-                  <Navigate to="/admin" replace />
+                  <Navigate to="/admin/dashboard" replace />
                 ) : (
                   <AdminLogin />
                 )
