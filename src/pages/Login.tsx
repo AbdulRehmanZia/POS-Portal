@@ -48,7 +48,7 @@ const AdminLogin = () => {
         });
 
         // Redirect to Dashboard
-        navigate("/admin", { replace: true });
+        navigate("/admin/dashboard", { replace: true });
       } else {
         toast({
           title: "Error",
