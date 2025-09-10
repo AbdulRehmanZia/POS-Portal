@@ -43,82 +43,83 @@ const Pricing = () => {
   ];
 
   return (
-    <section className="py-24 bg-card/20" id="pricing">
-      <div className="container mx-auto px-6 lg:px-24">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-4xl font-bold mb-4 tracking-tight">
+    <section className="py-16 bg-card/20" id="pricing">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold mb-3 tracking-tight">
             Simple, Transparent Pricing
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Choose the plan that works best for your business. All plans include
             our core POS features, with no hidden fees.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto items-start">
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`relative group rounded-3xl overflow-hidden shadow-lg border transition-all duration-500
+              className={`relative rounded-2xl overflow-hidden shadow-md border transition-all duration-300
                 ${
                   plan.highlighted
-                    ? "border-primary/50 bg-card transform scale-105"
+                    ? "border-primary/50 bg-card ring-2 ring-primary/20"
                     : "border-border/50 bg-background"
                 }
-                hover:shadow-2xl hover:shadow-primary/10 hover:scale-105`}
+                hover:shadow-lg hover:shadow-primary/5`}
             >
-             
               <div
-                className={`p-8 text-center border-b ${
+                className={`p-6 text-center border-b ${
                   plan.highlighted
                     ? "bg-primary text-primary-foreground border-primary"
-                    : "bg-muted text-foreground border-border"
+                    : "bg-muted/50 text-foreground border-border"
                 }`}
               >
-                <h3 className="text-2xl font-bold mb-2 tracking-tight">
+                <h3 className="text-xl font-bold mb-1">
                   {plan.name}
                 </h3>
                 <div className="flex items-baseline justify-center mb-1">
-                  <span className="text-5xl font-bold">₨{plan.price}</span>
+                  <span className="text-3xl font-bold">₨{plan.price}</span>
                 </div>
-                <p className="text-sm text-muted-foreground">/month</p>
-                <p className={`text-sm mt-2 ${plan.highlighted ? 'text-primary-foreground/80' : 'text-muted-foreground'}`}>
-                  Perfect for {plan.name.toLowerCase()} businesses
-                </p>
+                <p className="text-xs opacity-80">/month</p>
               </div>
-              <div className="p-8">
-                <ul className="space-y-4 mb-8">
-                  <li className="flex items-center text-sm font-medium">
-                    <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
+              
+              <div className="p-6">
+                <div className="mb-2 text-sm text-muted-foreground text-center">
+                  Perfect for {plan.name.toLowerCase()} businesses
+                </div>
+                
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-center text-sm">
+                    <Check className="w-4 h-4 text-primary mr-2 flex-shrink-0" />
                     <span>Products: {plan.products}</span>
                   </li>
-                  <li className="flex items-center text-sm font-medium">
-                    <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
+                  <li className="flex items-center text-sm">
+                    <Check className="w-4 h-4 text-primary mr-2 flex-shrink-0" />
                     <span>Categories: {plan.categories}</span>
                   </li>
-                  <li className="flex items-center text-sm font-medium">
-                    <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
+                  <li className="flex items-center text-sm">
+                    <Check className="w-4 h-4 text-primary mr-2 flex-shrink-0" />
                     <span>Members: {plan.members}</span>
                   </li>
-                  <hr className="my-2 border-border" />
+                  
                   {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-center text-sm font-medium">
-                      <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
+                    <li key={i} className="flex items-center text-sm">
+                      <Check className="w-4 h-4 text-primary mr-2 flex-shrink-0" />
                       <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
 
                 <Button
-                  className={`w-full text-lg py-6 font-bold tracking-wide
-                    ${
-                      plan.highlighted
-                        ? "bg-secondary text-secondary-foreground hover:bg-secondary/90"
-                        : "bg-primary text-primary-foreground hover:bg-primary/90"
-                    }`}
+                  className={`w-full ${
+                    plan.highlighted
+                      ? "bg-secondary text-secondary-foreground hover:bg-secondary/90"
+                      : "bg-primary text-primary-foreground hover:bg-primary/90"
+                  }`}
+                  size="sm"
                 >
-                  <a href="#contact" className="flex items-center justify-center">
-                    Get Started <ArrowRight className="w-5 h-5 ml-2" />
+                  <a href="#contact" className="flex items-center justify-center text-sm">
+                    Get Started <ArrowRight className="w-4 h-4 ml-1" />
                   </a>
                 </Button>
               </div>
@@ -126,7 +127,7 @@ const Pricing = () => {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
+        <div className="mt-12 text-center">
           <p className="text-muted-foreground text-sm">
             Need a custom plan?{" "}
             <a href="#contact" className="text-primary hover:underline font-medium">

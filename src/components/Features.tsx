@@ -55,32 +55,32 @@ const features = [
 
 const Features = () => {
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-[100px]">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4">
+    <section className="py-12 md:py-20 bg-background">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Powerful Features for Modern Retail
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4 sm:px-0">
             Our comprehensive POS system includes everything you need to manage 
             your retail business efficiently and effectively.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
           {features.map((feature, index) => (
             <Card 
               key={index} 
-              className="group hover:shadow-feature transition-all duration-300 hover:scale-105 border-border/50"
+              className="group hover:shadow-feature transition-all duration-300 md:hover:scale-105 border-border/50 h-full"
             >
-              <CardContent className="p-6 text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-feature rounded-2xl mb-4 group-hover:bg-gradient-hero transition-all duration-300">
-                  <feature.icon className="w-8 h-8 text-primary group-hover:text-primary-foreground" />
+              <CardContent className="p-5 sm:p-6 text-center flex flex-col items-center">
+                <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-gradient-feature rounded-2xl mb-4 group-hover:bg-gradient-hero transition-all duration-300">
+                  <feature.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary group-hover:text-primary-foreground" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">
+                <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
                   {feature.description}
                 </p>
               </CardContent>
